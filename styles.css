@@ -1,0 +1,339 @@
+/* Variables de Colores */
+/* Variables de Colores para Logo Blanco y Negro (Azul Industrial) */
+:root {
+    --primary-color: #2563eb;   /* Azul industrial/eléctrico para botones e interacciones */
+    --primary-hover: #1d4ed8;   /* Azul más intenso al pasar el ratón */
+    --dark-bg: #111827;         /* Negro Grafito (resalta tu logo en blanco) */
+    --light-bg: #f8fafc;        /* Fondo gris muy claro */
+    --card-bg: #ffffff;         /* Blanco puro para tarjetas */
+    --text-color: #1f2937;      /* Gris oscuro para textos principales */
+    --text-muted: #6b7280;     /* Gris secundario para detalles */
+    --border-color: #e5e7eb;    /* Bordes suaves */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background-color: #f1f5f9;  /* Gris claro elegante */
+    color: #0f172a;             /* Texto oscuro para buen contraste */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    border-bottom: 1px solid #e2e8f0; 
+}
+/* Ajuste de tamaño para el logo SBS */
+.logo-img {
+    height: 60px; /* Ajusta este valor si lo quieres más grande o más chico */
+    width: auto;  /* Mantiene las proporciones originales para que no se deforme */
+    object-fit: contain;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.logo strong {
+    color: var(--primary-color);
+}
+
+/* Cambiar el color de las letras del menú a oscuro */
+.nav a {
+    color: #0f172a;             /* Texto oscuro */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: var(--primary-color); /* Cambia al azul al pasar el ratón */
+}
+
+/* Cambiar el icono del carrito a oscuro */
+.cart-icon-wrapper {
+    position: relative;
+    cursor: pointer;
+    color: #0f172a;             /* Icono en tono oscuro */
+}
+
+#cart-count {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), 
+                url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80') center/cover;
+    color: #ffffff;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #d1d5db;
+    margin-bottom: 25px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Grilla de Productos */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 18px;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    border-color: var(--dark-bg);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.product-card h3 {
+    font-size: 1.1rem;
+    margin: 12px 0 6px 0;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--dark-bg);
+    margin: 8px 0 14px 0;
+}
+
+/* Sección de Presupuesto */
+.presupuesto-section {
+    background-color: #f1f5f9;
+    padding: 50px 0;
+    margin-top: 50px;
+    border-top: 1px solid var(--border-color);
+}
+
+.presupuesto-box {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--primary-color);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.form-group input, .form-group select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    outline: none;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--primary-color);
+}
+
+.resumen-presupuesto {
+    background: var(--light-bg);
+    padding: 18px;
+    border-radius: 6px;
+    margin-top: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.resumen-presupuesto h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.presupuesto-fila {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.presupuesto-fila.total {
+    font-size: 1.25rem;
+    border-top: 2px solid var(--border-color);
+    padding-top: 12px;
+    margin-bottom: 0;
+    color: var(--dark-bg);
+}
+
+/* Modal Carrito */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(17, 24, 39, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.close-btn {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+footer {
+    background: var(--dark-bg);
+    color: #9ca3af;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+/* Selector de Talle en las Tarjetas */
+.select-talle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.select-talle {
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+.select-talle:focus {
+    border-color: var(--primary-color);
+}

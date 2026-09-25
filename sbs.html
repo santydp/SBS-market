@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBS- Indumentaria Laboral</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Iconos Lucide para una estética profesional -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Encabezado / Navegación -->
+    <header class="header">
+        <div class="logo">
+            <img src="D:\sbs\imagenes\Code_Generated_Image.png" alt="Logo SBS" class="logo-img">
+        </div>
+        <nav class="nav">
+            <a href="#catalogo">Catálogo</a>
+            <a href="#presupuesto">Calculadora de Presupuesto</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="cart-icon-wrapper" onclick="toggleCarrito()">
+            <i data-lucide="shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>EQUIPAMIENTO Y ROPA DE TRABAJO DE ALTA RESISTENCIA</h1>
+            <p>Protección, seguridad y comodidad para tu equipo de trabajo. Envíos a todo el país.</p>
+            <a href="#catalogo" class="btn-primary">Ver Catálogo</a>
+        </div>
+    </section>
+
+    <!-- Catálogo de Productos -->
+    <section id="catalogo" class="container">
+        <h2>Catálogo de Productos</h2>
+        <div class="filters">
+            <button class="filter-btn active" onclick="filtrar('todos')">Todos</button>
+            <button class="filter-btn" onclick="filtrar('pantalon')">Pantalones</button>
+            <button class="filter-btn" onclick="filtrar('calzado')">Calzado</button>
+            <button class="filter-btn" onclick="filtrar('camisa')">Camperas</button>
+            <button class="filter-btn" onclick="filtrar('remera')">Remeras</button>
+        </div>
+        <div class="product-grid" id="product-grid">
+            <!-- Los productos se cargan dinámicamente desde script.js -->
+        </div>
+    </section>
+
+    <!-- Sección de Solicitud de Presupuesto Mayorista -->
+    <section id="presupuesto" class="presupuesto-section">
+        <div class="container">
+            <h2>Calculadora de Presupuesto </h2>
+            <p>Calcula una estimación para equipar a tu personal en volumen:</p>
+            
+            <div class="presupuesto-box">
+                <div class="form-group">
+                    <label for="cantidad-empleados">Cantidad de Empleados/Operarios:</label>
+                    <input type="number" id="cantidad-empleados" value="10" min="1" oninput="calcularPresupuesto()">
+                </div>
+                
+                <div class="form-group">
+                    <label for="tipo-kit">Selecciona el Kit de Uniforme:</label>
+                    <select id="tipo-kit" onchange="calcularPresupuesto()">
+                        <option value="basico">Kit Básico (Pantalón Cargo + Camisa)</option>
+                        <option value="completo" selected>Kit Completo (Pantalón cargo + Camisa + Calzado)</option>
+                        <option value="invierno">Kit Invierno (Pantalón cargo + Chomba + Calzado)</option>
+                        <option value="invierno">Kit Invierno (Bombacha+ Camisa + Calzado)</option>
+                    </select>
+                </div>
+
+                <div class="resumen-presupuesto">
+                    <h3>Resumen Estimado</h3>
+                    <div class="presupuesto-fila">
+                        <span>Costo Unitario por Kit:</span>
+                        <strong id="costo-unitario">$0</strong>
+                    </div>
+                    <div class="presupuesto-fila">
+                        <span>Descuento por Cantidad:</span>
+                        <strong id="descuento-aplicado">0%</strong>
+                    </div>
+                    <div class="presupuesto-fila total">
+                        <span>Total Presupuestado:</span>
+                        <strong id="presupuesto-total">$0</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal del Carrito de Compras -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="toggleCarrito()">&times;</span>
+            <h2>Tu Carrito de Compras</h2>
+            <div id="cart-items">
+                <!-- Se llena con JS -->
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <strong id="cart-total-price">$0</strong>
+            </div>
+            <button class="btn-primary full-width" onclick="enviarPedidoWhatsApp()">Finalizar Pedido por WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer id="contacto">
+        <P>NUMERO</P>
+        <p>2954740037</p>
+        <p>CORREO</p>
+        <p>santidelpino2006@gmail.com</p>
+        <p>INSTAGRAM</p>
+        <p>@sbs_ropa.de.trabajo</p>
+        <p>&copy; 2026 SBS - Ropa de Trabajo </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
