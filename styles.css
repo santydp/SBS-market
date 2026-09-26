@@ -409,3 +409,67 @@ footer {
         grid-template-columns: 1fr !important; /* Formulario en 1 columna */
     }
 }
+/* Estilos para el Footer con Íconos Lucide */
+#contacto {
+    background-color: #0f172a; /* Fondo oscuro o gris según prefieras */
+    color: #ffffff;
+    padding: 30px 20px 15px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.contact-item i {
+    width: 24px;
+    height: 24px;
+    color: #2563eb; /* Azul de acento para los íconos */
+    flex-shrink: 0;
+}
+
+.contact-item strong {
+    display: block;
+    font-size: 11px;
+    color: #94a3b8;
+    letter-spacing: 1px;
+}
+
+.contact-item a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.contact-item a:hover {
+    color: #2563eb;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #64748b;
+    border-top: 1px solid #1e293b;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+
+/* Ajuste responsivo para celulares */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
