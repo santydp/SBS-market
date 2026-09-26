@@ -305,13 +305,6 @@ body {
     margin-top: 15px;
 }
 
-footer {
-    background: var(--dark-bg);
-    color: #9ca3af;
-    text-align: center;
-    padding: 25px;
-    margin-top: 50px;
-}
 /* Selector de Talle en las Tarjetas */
 .select-talle-container {
     display: flex;
